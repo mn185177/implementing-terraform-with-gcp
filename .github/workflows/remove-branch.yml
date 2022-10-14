@@ -1,12 +1,12 @@
-#name: Remove branch
+name: Remove branch
 
-#on:
-#  create
+on:
+  create
 
-#jobs:
-#  remove-branch:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: codelytv/no-branches@v1
-#        with:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  remove-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mn185177/delete-branche@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
