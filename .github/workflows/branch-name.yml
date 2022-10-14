@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
-          branch_pattern: 'fssre-*|rel-*|hotfix*|mn185177-*'
+          branch_pattern: 'fssre-*|rel-*|hotfix*|mn185177*'
           comment_for_invalid_branch_name: 'Ups! This branch name is not following the standards! You can see them here: https://github.com/mn185177'
           fail_if_invalid_branch_name: 'true'
           ignore_branch_pattern: 'master|beta|main|qa'
