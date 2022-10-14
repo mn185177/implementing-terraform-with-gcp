@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: mn185177/branch-name@v3
         with:
-          branch_pattern: 'fssre-[0123456789][0123456789][0123456789][0123456789]+|rel-*|hotfix*|mn185177*'
+          branch_pattern: 'fssre-[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]|rel-*|hotfix*|mn185177*'
           comment_for_invalid_branch_name: 'Ups! This branch name is not following the standards! You can see them here: https://github.com/mn185177'
           fail_if_invalid_branch_name: 'true'
           ignore_branch_pattern: 'master|beta|main|qa'
