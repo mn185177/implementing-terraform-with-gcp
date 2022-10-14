@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: mn185177/delete-branch@v1
+      - uses: mn185177/delete-branch@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
