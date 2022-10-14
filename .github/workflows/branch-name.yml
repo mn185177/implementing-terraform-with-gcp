@@ -1,6 +1,8 @@
 name: Branch Name
-on: [ push, create]
-
+on: 
+  pull_request:
+    types: [opened]
+    
 jobs:
   branch_name:
     runs-on: ubuntu-latest
@@ -8,9 +10,9 @@ jobs:
     steps:
       - uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
-          branch_pattern: 'fssre-*|rel-*|hotfix*'
+          branch_pattern: 'fssre-*|rel-*|hotfix*|mn185177-*'
           comment_for_invalid_branch_name: 'Ups! This branch name is not following the standards! You can see them here: https://github.com/mn185177'
-          fail_if_invalid_branch_name: 'true'
+          fail_if_invalid_branch_name: 'false'
           ignore_branch_pattern: 'master|beta|main|qa'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
