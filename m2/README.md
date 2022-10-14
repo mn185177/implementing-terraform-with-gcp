@@ -9,6 +9,7 @@ Commands used:
 1. List all GCP Projects:
 `gcloud projects list`
 
+
 1. Set active Project:
 `gcloud config set project <PROJECT_ID>`
 
