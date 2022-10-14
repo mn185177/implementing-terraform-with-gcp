@@ -10,6 +10,8 @@ Commands used:
 1. Run init
 `terraform init`
 
+
+
 1. Run Validate
 `terraform validate`
 
