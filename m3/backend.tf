@@ -2,6 +2,7 @@
 terraform {
   backend "gcs" {
     bucket = "carved-rock-state-bucket"
+    
     prefix = "m3/gcs_state"
   }
 }
