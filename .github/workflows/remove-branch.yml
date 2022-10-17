@@ -7,6 +7,6 @@ jobs:
   remove-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: mn185177/delete-branch@v6
+      - uses: mn185177/delete-branch@v7
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
