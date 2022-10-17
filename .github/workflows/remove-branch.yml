@@ -18,5 +18,5 @@ jobs:
           comment_for_valid_branch_name: 'This branch name is following the standards!'
           fail_if_invalid_branch_name: 'true'
           ignore_branch_pattern: 'master|beta|main|qa'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
