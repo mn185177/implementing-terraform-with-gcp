@@ -1,7 +1,5 @@
 name: Branch Name
-on: 
-  pull_request:
-    types: [opened]
+on: [create, push]
     
 jobs:
   branch_name:
