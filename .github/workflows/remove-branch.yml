@@ -1,7 +1,6 @@
 name: Remove branch
 
-on:
-  create
+on:[create, pull_request]
 
 jobs:
   remove-branch:
