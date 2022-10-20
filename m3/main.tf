@@ -12,6 +12,8 @@ resource "google_cloud_run_service" "default" {
     spec {
       containers {
         image = "us-docker.pkg.dev/cloudrun/container/hello"
+        
+        
       }
     }
 
