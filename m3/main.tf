@@ -6,6 +6,7 @@ resource "google_cloud_run_service" "default" {
   # Delete this part for demo
   depends_on = [
     google_project_service.gcp_services
+    
   ]
 
   template {
