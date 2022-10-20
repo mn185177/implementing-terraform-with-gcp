@@ -9,6 +9,7 @@ resource "google_storage_bucket_object" "static_content" {
   bucket = data.google_storage_bucket.site_bucket.name
   name   = each.value
   source = "static-site/${each.value}"
+  
   metadata = {
     "Cache-Control" = "no-store"
   }
