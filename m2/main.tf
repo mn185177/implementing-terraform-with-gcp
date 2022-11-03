@@ -3,6 +3,8 @@ resource "google_compute_instance" "this" {
   name         = "carved-rock-instance"
   machine_type = "e2-medium"
   zone         = "us-east1-b"
+  
+  
 
   boot_disk {
     initialize_params {
