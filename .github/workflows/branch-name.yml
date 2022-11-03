@@ -14,13 +14,6 @@ jobs:
           comment_for_invalid_branch_name: 'This branch name is not following the standards! You can see them here: https://github.com/ncr-swt-sre/fin-iac/blob/master/doc/DeveloperBranch.md.'
           comment_for_valid_branch_name: 'This branch name is following the standards!'
           fail_if_invalid_branch_name: 'true'
-          ignore_branch_pattern: 'master|beta|main|qa'
-      
-      - name: Close PR
-        if: failure()
-        uses: mn185177/close-mypr@v1
-        with:
-          comment: "We do not accept PRs. If branch name is not fallowing standards, please check documentation here: https://github.com/ncr-swt-sre/fin-iac/blob/master/doc/DeveloperBranch.md."
-        
+          ignore_branch_pattern: 'master|beta|main|qa'  
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
