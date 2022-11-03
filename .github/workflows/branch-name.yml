@@ -1,7 +1,7 @@
 name: Branch Name
 on: 
   pull_request_target:
-    types: [opened,edited]
+    types: [opened, edited, reopened]
     
 jobs:
   branch_name:
