@@ -4,6 +4,7 @@ data "google_storage_bucket" "site_bucket" {
 }
 
 resource "google_storage_bucket_object" "static_content" {
+  
   for_each = fileset("static-site/", "**")
   # Reference that bucket's name here
   bucket = data.google_storage_bucket.site_bucket.name
