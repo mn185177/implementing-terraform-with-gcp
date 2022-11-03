@@ -8,12 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Branch Name
     steps:
-      - uses: mn185177/branch-name@v4.3
+      - uses: mn185177/branch-name@v4.4
         with:
           branch_pattern: 'fssre-*|rel-*|hotfix*|mn185177*'
-          comment_for_invalid_branch_name: 'This branch name is not following the standards! You can see them here: https://github.com/ncr-swt-sre/fin-iac/blob/master/doc/DeveloperBranch.md.'
-          comment_for_valid_branch_name: 'This branch name is following the standards!'
+          comment_for_invalid_branch_name: 'This PR Subject is not following the standards! You can see them here: https://github.com/ncr-swt-sre/fin-iac/blob/master/doc/DeveloperBranch.md.'
+          comment_for_valid_branch_name: 'This PR Subject is as per the standards!'
           fail_if_invalid_branch_name: 'true'
-          ignore_branch_pattern: 'master|beta|main|qa'  
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
