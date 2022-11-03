@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Branch Name
     steps:
-      - uses: mn185177/branch-name@v5.2
+      - uses: mn185177/branch-name@v5.3
         with:
           comment_for_invalid_branch_name: 'This PR Subject is not following the standards! You can see them here: https://github.com/ncr-swt-sre/fin-iac/blob/master/doc/DeveloperBranch.md.'
           comment_for_valid_branch_name: 'This PR Subject is as per the standards!'
