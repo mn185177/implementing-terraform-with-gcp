@@ -8,13 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Branch Name
     steps:
-      - name: Validate PR
-        uses: mn185177/branch-name@v6
+      - uses: mn185177/branch-name@v6
         id: pr_status
         with:
           fail_if_invalid_branch_name: 'true'
           
-      - name: Get output
-        run: "echo 'PR validation: $GITHUB_ACTOR'"
+      - uses: actions/checkout@v3
+      - name: Slack Notification
+        uses: mn185177/action-slack-notify@v2
+        
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
