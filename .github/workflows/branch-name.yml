@@ -15,6 +15,6 @@ jobs:
           fail_if_invalid_branch_name: 'true'
           
       - name: Get output
-        run: "echo 'PR validation: ${{ steps.pr_status.outputs }}'"
+        run: "echo 'PR validation: $GITHUB_ACTOR'"
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
