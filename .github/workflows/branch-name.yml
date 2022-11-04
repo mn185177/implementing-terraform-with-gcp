@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Branch Name
     steps:
+      
+      - uses: actions/checkout@v3
+      
       - uses: mn185177/branch-name@v6
         id: pr_status
         with:
           fail_if_invalid_branch_name: 'true'
-      - name: Git Actions
-        if: ${{ always() }}
-        uses: actions/checkout@v3
+          
       - name: Slack Notification
         if: ${{ failure() }}
         uses: mn185177/action-slack-notify@v2
