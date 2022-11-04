@@ -15,8 +15,11 @@ jobs:
           
       - uses: actions/checkout@v3
       - name: Slack Notification
+        if: ${{ failure() }}
         uses: mn185177/action-slack-notify@v2
         
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
+      SLACK_WEBHOOK: https://hooks.slack.com/services/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
+      SLACK_MESSAGE: 'PR status : ${{ job.status }}'
+      SLACK_TITLE: '${{ github.event.pull_request.html_url || github.event.head_commit.url }}'
