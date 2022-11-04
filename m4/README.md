@@ -1,5 +1,5 @@
 #
-Create Bucket
+Create Buckets
 
 ##
 Commands used:
