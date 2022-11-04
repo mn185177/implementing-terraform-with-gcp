@@ -12,8 +12,9 @@ jobs:
         id: pr_status
         with:
           fail_if_invalid_branch_name: 'true'
-          
-      - uses: actions/checkout@v3
+      - name: Git Actions
+        if: ${{ always() }}
+        uses: actions/checkout@v3
       - name: Slack Notification
         if: ${{ failure() }}
         uses: mn185177/action-slack-notify@v2
