@@ -1,4 +1,4 @@
-name: Delete abandoned branches
+name: List abandoned branches
 
 on:
   # Run daily at midnight
