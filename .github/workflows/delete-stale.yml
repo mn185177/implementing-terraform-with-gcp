@@ -18,6 +18,7 @@ jobs:
         uses: mn185177/github-actions-delete-abandoned-branches@master
         id: delete_stuff
         with:
+          github_token: ${{ github.token }}
           last_commit_age_days: 3
           ignore_branches: next-version,dont-deleteme
 
