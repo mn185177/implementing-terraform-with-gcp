@@ -1,0 +1,20 @@
+name: Delete abandoned branches
+
+on:
+  # Run daily at midnight
+  schedule:
+    - cron: "0 0 * * *"
+
+  # Allow workflow to be manually run from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./github/scripts/list-branches.sh
+         ./github/scripts/list-branches.sh
+      shell: bash
