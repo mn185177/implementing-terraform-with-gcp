@@ -15,6 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-         chmod +x ./github/scripts/old-branches.sh
-         ./github/scripts/old-branches.sh
+         chmod +x ./scripts/old-branches.sh
+         ./scripts/old-branches.sh
       shell: bash
