@@ -18,7 +18,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Report stale branches
         uses: mn185177/report-stale-branches@main
-        id: delete_stuff
-        
-      - name: Get output
-        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
+        id: delete_stuff    
+      - name: Post to a slack cannel
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          #channel-id: 'sre-git-alerts'
+          slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.deleted_branches }}"
+        env:
+          SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
+          
