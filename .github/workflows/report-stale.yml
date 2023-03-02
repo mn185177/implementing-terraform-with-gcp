@@ -1,0 +1,24 @@
+name: Delete abandoned branches
+
+on:
+  # Run daily at midnight
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "30 6 * * 1-5"
+
+  # Allow workflow to be manually run from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  cleanup_old_branches:
+    runs-on: ubuntu-latest
+    name: Satisfy my repo CDO
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Report stale branches
+        uses: mn185177/report-stale-branches@main
+        id: delete_stuff
+        
+      - name: Get output
+        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
