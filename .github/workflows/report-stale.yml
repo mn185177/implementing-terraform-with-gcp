@@ -21,12 +21,13 @@ jobs:
         id: delete_stuff
       - name: Group of log lines
         run: |
-            echo "Inside group: ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "," "\n"
+            echo "branch_updates= ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "," "\n" >> $GITHUB_ENV
       - name: Post to a slack cannel
         uses: slackapi/slack-github-action@v1.23.0
         with:
+          slack-message: "GitHub Updates: ${{env.branch_updates}}"
           #channel-id: 'sre-git-alerts'
-          slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.deleted_branches }}"
+          #slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.deleted_branches }}"
         env:
           SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
           
