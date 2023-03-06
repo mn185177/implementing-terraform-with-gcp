@@ -28,9 +28,9 @@ jobs:
           #channel-id: 'sre-git-alerts'
           slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.branch_update }}"
           payload: |
-            {"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            {"text": "GitHub Branch updates: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
             "blocks": [{"type": "section","text": 
-            {"type": "mrkdwn","text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"}}]}
+            {"type": "mrkdwn","text": "GitHub Action build result: ${{ steps.delete_stuff.outputs.branch_update }}"}}]}
         
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
