@@ -18,7 +18,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Report stale branches
         uses: mn185177/report-stale-branches@main
-        id: delete_stuff    
+        id: delete_stuff
+      - name: Group of log lines
+        run: |
+            echo "Inside group: ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "," "\n"
       - name: Post to a slack cannel
         uses: slackapi/slack-github-action@v1.23.0
         with:
