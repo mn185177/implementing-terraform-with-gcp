@@ -1,4 +1,4 @@
-name: Report stale
+name: Report stale branch
 
 on:
   # Run daily at midnight
@@ -12,7 +12,7 @@ on:
 jobs:
   cleanup_old_branches:
     runs-on: ubuntu-latest
-    name: Satisfy my repo CDO
+    name: Report stale branches
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,11 +22,17 @@ jobs:
       - name: Group of log lines
         run: |
             echo "branch_updates= ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "-" "\n"
-      - name: Post to a slack cannel
+      - name: Post to a slack channel
         uses: slackapi/slack-github-action@v1.23.0
         with:
           #channel-id: 'sre-git-alerts'
           slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.branch_update }}"
+          payload: |
+            {"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            "blocks": [{"type": "section","text": 
+            {"type": "mrkdwn","text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"}}]}
+        
         env:
-          SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
           
