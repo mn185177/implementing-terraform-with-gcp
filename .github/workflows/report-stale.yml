@@ -21,7 +21,7 @@ jobs:
         id: delete_stuff
       - name: Group of log lines
         run: |
-            echo "branch_updates= ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "," "\n"
+            echo "branch_updates= ${{ steps.delete_stuff.outputs.deleted_branches }}" | tr "-" "\n"
       - name: Post to a slack cannel
         uses: slackapi/slack-github-action@v1.23.0
         with:
