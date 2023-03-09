@@ -8,7 +8,7 @@ on:
 
   # Allow workflow to be manually run from the GitHub UI
   workflow_dispatch:
-
+  
 jobs:
   cleanup_old_branches:
     runs-on: ubuntu-latest
@@ -26,11 +26,8 @@ jobs:
         uses: slackapi/slack-github-action@v1.23.0
         with:
           #channel-id: 'sre-git-alerts'
-          slack-message: "GitHub branch updates: ${{ steps.delete_stuff.outputs.branch_update }}"
           payload: |
-            {"text": "GitHub Branch updates: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-            "blocks": [{"type": "section","text": 
-            {"type": "mrkdwn","text": "GitHub Action build result: ${{ steps.delete_stuff.outputs.branch_update }}"}}]}
+            {"blocks":[{"type":"header","text":{"type":"plain_text","text":"GitHub Branches to destroy :destroy:"}},{"type":"divider"},{"type":"section","text":{"type":"mrkdwn","text":"${{ steps.delete_stuff.outputs.deleted_branches }} \n :delete-this: <https://github.com/ncr-swt-sre/fin-iac|Delete you branch from here fin-iac>"}}]}
         
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
