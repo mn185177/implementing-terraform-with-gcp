@@ -7,11 +7,6 @@
 				"subnetworkCidrMask": "25",
 				"disasterRecovery": "disabled"
 			},
-			"region": {
-				"regionName": "us-west",
-				"subnetworkCidrMask": "25",
-				"disasterRecovery": "disabled"
-			},
 			"cloudScheduler" : {
                 "scaleupSchedule" : "0 0 29 2 *",
                 "scaledownSchedule":  "0 18 * * 1-5"
@@ -23,6 +18,13 @@
 			"regressionValidation": {
 				"validatePrimary": true,
 				"validateDr": false
+			}
+		},
+		{
+			"region": {
+				"regionName": "us-west",
+				"subnetworkCidrMask": "25",
+				"disasterRecovery": "disabled"
 			}
 		}
 	]
