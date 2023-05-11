@@ -8,4 +8,4 @@ jobs:
     - name: XDTesting Validate JSON
       uses: FiorelaCiroku/XDTesting-ValidateJSON@main
       with:
-        file: sample.json
+        JSONFile: sample.json
