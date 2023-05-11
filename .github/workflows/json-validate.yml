@@ -4,8 +4,11 @@ jobs:
   check-repeat-keys:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: XDTesting Validate JSON
-      uses: FiorelaCiroku/XDTesting-ValidateJSON@main
+    - uses: actions/checkout@v3
       with:
-        JSONFile: sample.json
+        fetch-depth: 2
+
+    - name: Validate json files
+      uses: RaaLabs/validate-json@v1.0.0
+      with:
+        directory: "."
