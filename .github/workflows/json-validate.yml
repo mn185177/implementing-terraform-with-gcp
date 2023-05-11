@@ -6,6 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: XDTesting Validate JSON
-      uses: FiorelaCiroku/XDTesting-ValidateJSON@v1.0.0
+      uses: FiorelaCiroku/XDTesting-ValidateJSON@main
       with:
         file: sample.json
