@@ -1,6 +1,5 @@
 {
 	"tenantID": "abc",
-	"tenantID": "bcd"
 	"regions": [
 		{
 			"region": {
@@ -9,10 +8,10 @@
 				"disasterRecovery": "disabled"
 			},
 			"region": {
-				"regionName": "us-central1",
+				"regionName": "us-west",
 				"subnetworkCidrMask": "25",
 				"disasterRecovery": "disabled"
-			}
+			},
 			"cloudScheduler" : {
                 "scaleupSchedule" : "0 0 29 2 *",
                 "scaledownSchedule":  "0 18 * * 1-5"
