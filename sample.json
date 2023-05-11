@@ -1,5 +1,6 @@
 {
 	"tenantID": "abc",
+	"tenantID": "bcd",
 	"regions": [
 		{
 			"region": {
