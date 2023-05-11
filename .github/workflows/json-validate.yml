@@ -9,6 +9,6 @@ jobs:
         fetch-depth: 2
 
     - name: Validate json files
-      uses: RaaLabs/validate-json@v1.0.0
+      uses: mn185177/vjson@master
       with:
         directory: "."
