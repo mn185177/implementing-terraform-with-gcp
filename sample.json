@@ -1,0 +1,29 @@
+{
+	"tenantID": "abc",
+	"regions": [
+		{
+			"region": {
+				"regionName": "us-central1",
+				"subnetworkCidrMask": "25",
+				"disasterRecovery": "disabled"
+			},
+			"region": {
+				"regionName": "us-central1",
+				"subnetworkCidrMask": "25",
+				"disasterRecovery": "disabled"
+			}
+			"cloudScheduler" : {
+                "scaleupSchedule" : "0 0 29 2 *",
+                "scaledownSchedule":  "0 18 * * 1-5"
+            },
+			"regionalLoadBalancer": {
+				"internalIp": false,
+				"externalIp": true
+			},
+			"regressionValidation": {
+				"validatePrimary": true,
+				"validateDr": false
+			}
+		}
+	]
+}
